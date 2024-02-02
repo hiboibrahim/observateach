@@ -1,7 +1,12 @@
 import './App.css';
 
-const App = () => <h1 className="App">Hello World </h1>;
 
+const App = () => (
+<>
+    <header />
+    <footer />
+</>
+);
 
 
 export default App;
