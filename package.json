@@ -4,7 +4,7 @@
   "description": "An observation tool for teachers to easily take notes of student progression/development and general classroom observations.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node backend/server.js"
   },
   "author": "Hibo Ibrahim",
   "license": "ISC",
