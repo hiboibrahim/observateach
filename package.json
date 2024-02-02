@@ -1,0 +1,14 @@
+{
+  "name": "observateach",
+  "version": "1.0.0",
+  "description": "An observation tool for teachers to easily take notes of student progression/development and general classroom observations.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hibo Ibrahim",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
