@@ -1,4 +1,5 @@
 import { Container, Form, FormControl, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 
@@ -7,7 +8,13 @@ const header = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
     <Container>
-      <Navbar.Brand href="#home">ObservaTeach</Navbar.Brand>
+      <Navbar.Brand>
+        <Link to='/'>
+        ObservaTeach
+        </Link>
+
+
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
@@ -20,7 +27,12 @@ const header = () => {
                   onChange={(e) => setSearch(e.target.value)}
                 />
               </Form>
-          <Nav.Link href="#home">My Observations</Nav.Link>
+          <Nav.Link href="/mynotes">
+            <Link to='/mynotes'>
+            My Observations
+            </Link>
+            </Nav.Link>
+
           <NavDropdown title="Hibo Ibrahim" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">My Profile</NavDropdown.Item>
           
