@@ -1,8 +1,17 @@
 import "./App.css";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 
+const App = () => (
+    <>
+    <Header />
+    <main style={{minHeight: "93vh"}}>
+        </main>
+    <Footer />
 
-const App = () => <h1 className="App"> Hello </h1>;
+    </>
+);
 
 
 export default App;
