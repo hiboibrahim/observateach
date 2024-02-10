@@ -1,9 +1,12 @@
 import React from 'react'
+import MainScreen from '../../components/MainScreen';
 
 const myNotes = () => {
   return (
-    <div>My Notes</div>
-  )
-}
+    <MainScreen title= 'Welcome back Hibo Ibrahim'>My Observations </MainScreen>
+  );
+};
 
-export default myNotes
+export default myNotes;
+
+
