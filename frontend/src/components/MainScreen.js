@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-import "./Screen.css"
+import "./MainScreen.css"
 
 
 function MainScreen({ children, title }) {
