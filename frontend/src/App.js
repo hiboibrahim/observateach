@@ -16,10 +16,10 @@ function App() {
       <main className="App">
         <Routes>
 
-          <Route path="/" component={LandingPage} exact />
+          <Route path="/" Component={LandingPage} exact />
           <Route
           path="/mynotes"
-          component={({ history }) => (
+          Component={({ history }) => (
             <MyNotes search={search} history={history} />
         
           )}
