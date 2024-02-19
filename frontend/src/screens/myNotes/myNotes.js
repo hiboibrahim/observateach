@@ -1,30 +1,28 @@
-import React from 'react';
-import {Button, Card} from "react-bootstrap";
-import MainScreen from '../../components/MainScreen';
+import React from "react";
+import { Accordion, Badge, Button, Card } from "react-bootstrap";
+import MainScreen from "../../components/MainScreen";
 import { Link } from "react-router-dom";
-import notes, {} from "../../data/notes";
-
+import notes from "../../data/notes";
 
 const myNotes = () => {
   const deleteHandler = (id) => {
-    if (window.confirm("Are you sure?")){
+    if (window.confirm("Are you sure?")) {
     }
-  }
+  };
   return (
     <div>
-    <MainScreen title= 'Welcome back Hibo Ibrahim'>My Observations 
+      <MainScreen title="Welcome back Hibo Ibrahim">
+        My Observations
+        <Link to="/createnote">
+          <Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
+            Create Observation
+          </Button>
 
-    <Link to='/createnote'>
-      <Button style={{ marginLeft: 10, marginBottom: 6 }} size='lg'>
-        Create Observation
-      </Button>
-    
-      {
-                        notes.map(note =>(
-                          <Card style={{ margin: 10 }} >
+          {notes.map((note) => (
+            <Accordion>
+              <Card style={{ margin: 10 }}>
                 <Card.Header style={{ display: "flex" }}>
-            <span
-                    // onClick={() => ModelShow(note)}
+                  <span
                     style={{
                       color: "black",
                       textDecoration: "none",
@@ -34,59 +32,70 @@ const myNotes = () => {
                       fontSize: 18,
                     }}
                   >
-                {note.title} </span>
-            
-            
-            <div>
-              <Button href={`/note/${note._id}`}>Edit</Button>
-              <Button variant="danger" className="mx-2" onClick={() => deleteHandler(note._id)}>Delete</Button>
+                    <Accordion.Toggle
+                      as={Card.Text}
+                      variant="link"
+                      eventKey="0"
+                    >
+                      {" "}
+                      {note.title}
+                    </Accordion.Toggle>
+                    {note.title}{" "}
+                  </span>
 
-            </div>
+                  <div>
+                    <Button href={`/note/${note._id}`}>Edit</Button>
+                    <Button
+                      variant="danger"
+                      className="mx-2"
+                      onClick={() => deleteHandler(note._id)}
+                    >
+                      Delete
+                    </Button>
+                  </div>
+                </Card.Header>
+                <Accordion.Collapse eventKey="0">
+                  <Card.Body>
+                    <h4>
+                      <Badge variant="success">Subject -{note.subject} </Badge>
+                    </h4>
+                    <blockquote className="blockquote mb-0">
+                      <p>{note.content}</p>
+                      <footer className="blockquote-footer">
+                        Created on - date
+                      </footer>
+                    </blockquote>
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+            </Accordion>
+          ))}
+          <Card style={{ margin: 10 }}>
+            <Card.Header style={{ display: "flex" }}>
+              <span
+                // onClick={() => ModelShow(note)}
+                style={{
+                  color: "black",
+                  textDecoration: "none",
+                  flex: 1,
+                  cursor: "pointer",
+                  alignSelf: "center",
+                  fontSize: 18,
+                }}
+              ></span>
+
+              <div>
+                <Button>Edit</Button>
+                <Button variant="danger" className="mx-2">
+                  Delete
+                </Button>
+              </div>
             </Card.Header>
-            <Card.Body>
-            <blockquote className="blockquote mb-0">
-          <p>
-           {note.content}
-          </p>
-          <footer className="blockquote-footer">
-            Created on - date
-          </footer>
-        </blockquote>
-            </Card.Body>
-      </Card>
-
-                        ))
-                    }
-      <Card style={{ margin: 10 }} >
-                <Card.Header style={{ display: "flex" }}>
-            <span
-                    // onClick={() => ModelShow(note)}
-                    style={{
-                      color: "black",
-                      textDecoration: "none",
-                      flex: 1,
-                      cursor: "pointer",
-                      alignSelf: "center",
-                      fontSize: 18,
-                    }}
-                  >
-                </span>
-            
-            
-            <div>
-              <Button>Edit</Button>
-              <Button variant="danger" className="mx-2">Delete</Button>
-
-            </div>
-            </Card.Header>
-      </Card>
-    </Link>
-    </MainScreen>
+          </Card>
+        </Link>
+      </MainScreen>
     </div>
   );
 };
 
-
 export default myNotes;
-
-
