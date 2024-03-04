@@ -17,6 +17,7 @@ const myNotes = () => {
           <Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
             Create Observation
           </Button>
+          </Link>
 
           {notes.map((note) => (
             <Accordion>
@@ -92,7 +93,7 @@ const myNotes = () => {
               </div>
             </Card.Header>
           </Card>
-        </Link>
+        
       </MainScreen>
     </div>
   );
