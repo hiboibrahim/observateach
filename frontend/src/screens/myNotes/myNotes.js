@@ -4,14 +4,15 @@ import MainScreen from "../../components/MainScreen";
 import { Link } from "react-router-dom";
 import notes from "../../data/notes";
 
-const myNotes = () => {
+const MyNotes = () => {
   const deleteHandler = (id) => {
     if (window.confirm("Are you sure?")) {
     }
   };
   return (
     <div>
-      <MainScreen title="Welcome back Hibo Ibrahim">
+      <h2>Hello mynotes</h2>
+      {/* <MainScreen title="Welcome back Hibo Ibrahim">
         My Observations
         <Link to="/createnote">
           <Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
@@ -94,9 +95,9 @@ const myNotes = () => {
             </Card.Header>
           </Card>
         
-      </MainScreen>
+      </MainScreen> */}
     </div>
   );
 };
 
-export default myNotes;
+export default MyNotes;

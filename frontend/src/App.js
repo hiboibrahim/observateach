@@ -17,14 +17,8 @@ function App() {
         <Routes>
 
           <Route path="/" Component={LandingPage} exact />
-          <Route
-          path="/mynotes"
-          Component={({ history }) => (
-            <MyNotes search={search} history={history} />
-        
-          )}
-          
-        />
+          {/* <Route path="/mynotes" Component= {MyNotes }/> */}
+          <Route path="/mynotes" exact element = {<MyNotes search={search}/> }/>
         </Routes>
       
       </main>
